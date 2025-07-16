@@ -27,7 +27,7 @@ This project is a simple text classification pipeline using a Convolutional Neur
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
+git clone https://github.com/Rayaratebr/fake-news-classifier-cnn-v1.git
 cd your-repo-name
 ```
 
@@ -58,6 +58,8 @@ Or deploy to [Hugging Face Spaces](https://huggingface.co/spaces) by uploading:
 - `app.py`
 - `textcnn_model.pth`
 - `requirements.txt`
+- word_to_id.pkl
+- id_to_label.pkl
 
 ---
 
@@ -81,6 +83,7 @@ It performs text classification based on tokenized, preprocessed inputs.
   - `word_to_id.pkl`: dictionary mapping words to integer IDs.
   - `id_to_label.pkl`: dictionary mapping IDs back to words (useful for interpretation or debugging).
 - These files must be saved in the same directory as `app.py`, as the app loads them at runtime.
+- These files will be generated when the code is run.
 
 ---
 
@@ -90,8 +93,6 @@ It performs text classification based on tokenized, preprocessed inputs.
 - `app.py` — Gradio app
 - `textcnn_model.pth` — saved model (created after training)
 - `requirements.txt` — dependencies
-- `word_to_id.pkl` — word to integer ID mapping
-- `id_to_label.pkl` — integer ID to word mapping
 
 ---
 
@@ -99,9 +100,9 @@ It performs text classification based on tokenized, preprocessed inputs.
 
 Once deployed, you can enter text like:
 
-> `"The product was amazing and delivery was fast!"`
+> `"BOMBSHELL REPORT: An anonymous source inside the World Health Organization has just leaked documents proving that the new 'smart grid' water meters being installed across Europe aren't for saving water, but are actually part of a secret plan to control the population through sonic frequencies. The mainstream media is refusing to report on this. Share this before they delete it!"`
 
-And receive a predicted label (e.g., `positive`, `negative`, etc.).
+And receive a predicted label (e.g., `fake`, `true`).
 
 ---
 
